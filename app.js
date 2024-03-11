@@ -21,42 +21,34 @@ function getWeather(){
 
 }
 function displayWeather(data){
-    const tempDivInfo= document.getElementById("temp-div");
-    const weatherInfoDiv= document.getElementById("weather-info");
-    const weatherIcon= document.getElementById("weather-icon");
-    const hourlyForecastDiv= document.getElementById("hourly-forecast");
+    const {name:city,
+                main:{temp,humidity},
+                weather:[{description,id,icon}]
+    }=data;
+            const cityDisplay= document.createElement("p");
 
-    weatherInfoDiv.innerHTML="";
-    hourlyForecastDiv.innerHTML="";
-    tempDivInfo.innerHTML="";
+            const tempDisplay=document.createElement("p");
 
-    if(data.cod==='404'){
-        weatherInfoDiv.innerHTML=`<p>${data.message}</p>`;
-    }else{
-        const cityName= data.name;
-        const temperature=Math.round(data.main.temp-273.15);
-        const description= data.weather[0].description;
-        const iconCode= data.weather[0].icon;
-        const iconUrl=`http://openweathermap.org/img/wn/${iconCode}@4x.png`;
+            const humidityDisplay=document.createElement("p");
 
-        const temperatureHTML=`
-        <P>${temperature}°C</p>
-        `;
-        const weatherHTML=`
-        <p>${cityName}</p>
-        <p>${description}</p>
-        `;
-        tempDivInfo.innerHTML= temperatureHTML;
-        weatherInfoDiv.innerHTML= weatherHTML;
-        weatherIcon.src= iconUrl;
-        weatherIcon.alt= description;
+            const descDisplay=document.createElement("p");
 
-        showImage();
-    }
+            const weatherEmoji=document.createElement("p");
+
+            temp-div.appendChild(tempDisplay);
+            weatherEmoji.appendChild(weatherEmoji);
+            city-div.appendChild(cityDisplay);
+            weather-info.appendChild(descDisplay);
+            humid-div.appendChild(humidityDisplay);
 }
+const checkbox= document.getElementById( "checkbox" );
 
+const element= document.body;
 
-function showImage() {
-    const weatherIcon = document.getElementById('weather-icon');
-    weatherIcon.style.display = 'block'; // Make the image visible once it's loaded
-}    
+checkbox.addEventListener("change",()=>{
+    element.classList.toggle( "dark" );
+});
+        
+        
+        
+        /*const iconUrl=`http://openweathermap.org/img/wn/${iconCode}@4x.png`;*/

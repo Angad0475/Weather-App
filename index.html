@@ -7,16 +7,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div>
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <img src="moon.png" class="moon">
+            <img src="sun.png" class="sun">
+            <span class="ball"></span>
+        </label>
+    </div>
     <div id="weather-container">
         <h2>Weather App</h2>
         <input type="text"id="city" placeholder="enter city">
         <button onclick="getWeather()">Search</button>
-        <img id="weather-icon" alt="Weather Icon">
-        <div id="temp-div"></div>
-        <div id="weather-info"></div>
-        <div id="hourly-forecast"></div>
+        <div class="weatherEmoji">
+        <img class="weather-icon"           >
+        </div>
+        <div class="temp-div"></div>
+        <div class="city-div"></div>
+        <div class="weather-info"></div>
+        <div class="humid-div"></div>
+        
 
     </div>
+    
     <script src="app.js"></script>
     
 </body>

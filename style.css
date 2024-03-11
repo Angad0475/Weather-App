@@ -1,12 +1,20 @@
+*{
+    margin:0;
+    padding:0;
+}
+
 body{
-    background: #8C52FF;
+    background:#8b48d7;
+    
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
     display:flex;
     align-items:center;
     justify-content: center;
-    height:100vh;
+    min-height:100vh;
     margin:0;
+    transition: 0.2s linear;
+
 }
 #weather-container{
     background: rgba(225,225,255,0.3);
@@ -17,6 +25,8 @@ body{
     backdrop-filter:blur(10px);
     border:1px solid rgba(225,225,225,0.1);
     text-align:center;
+    position:relative;
+    left:-5px;
 }
 h2,label,p{
     color:#fff;
@@ -59,28 +69,58 @@ button:hover{
     margin-bottom:0;
     display: none;
 }
-#hourly-forecast{
-    margin-top:  50px;
-    overflow-x:auto;
-    white-space:nowrap;
+p{
+    font-size:1.5rem;
+    margin:5px 0;
+}
+.dark{
+    background-color:black;
+}
+.dark h2{
+    color:#fff
+}
+.checkbox{
+    opacity: 0;
+    position:absolute;
+}
+
+.checkbox-label{
+    background-color:#111;
+    width:50px;
+    height: 17px;
+    border-radius:50px;
+    position: relative;
+    padding: 5px;
+    cursor:pointer;
     display:flex;
     justify-content:space-between;
-}
-.hourly-item{
-    flex:0 0 auto;
-    width: 80px;
-    display:flex;
-    flex-direction:column;
     align-items:center;
-    margin-right:10px;
-    color:white;
+    top:-190px;
+    right:-190px;
 }
-.hourly-item img{
-    width:30px;
-    height:30px;
-    margin-bottom:5px;
+.moon{
+    width:0.8rem;
+    height:0.8rem;
+    color: #f1c40f;
 }
-#hourly-heading{
-    color:#fff;
-    margin-top:10px;
+.sun{
+    width:0.8rem;
+    height:0.8rem;
+    color:#f39c12;
 }
+
+.checkbox-label .ball{
+        background-color: #fff;
+        width:22px;
+        height:22px;
+        position:absolute;
+
+        left:2px;
+        top:2px;
+        border-radius:50%;
+        transition: transform 0.2s linear;
+}
+.checkbox:checked + .checkbox-label .ball{
+    transform: translatex(2rem);
+}
+
