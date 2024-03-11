@@ -17,16 +17,15 @@ body{
 
 }
 #weather-container{
-    background: rgba(225,225,255,0.3);
+    
     max-width:400px;
     padding:20px;
     border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(225,225,225,0.1);
+    box-shadow:inset 0 8px 22px 5px #8b48d7;
+    backdrop-filter:blur(20px);
     text-align:center;
     position:relative;
-    left:-5px;
+    left:-35px;
 }
 h2,label,p{
     color:#fff;
@@ -39,20 +38,27 @@ input{
     border-radius:10px;
     border: 1px solid white;
     margin-top:20px;
+    outline:none;
+}
+input:hover{
+    border:1.5px solid  #e1a50d;
 }
 button{
-    background:#debff4;
+    background:#8424c8;
     color:white;
-    padding:10px;
+    padding: 3px;
     border:none;
     border-radius:10px;
     cursor:pointer;
-    margin-top:20px;
+
     width:100px;
+    height:35px;
+    position:relative;
+    top:0.5px;
     font-size:15px;
 }
 button:hover{
-    background: #8b48d7;
+    background: #b987f2;
 
 }
 #temp-div p{
@@ -80,13 +86,15 @@ p{
     color:#fff
 }
 .checkbox{
-    opacity: 0;
+    opacity: 0; 
     position:absolute;
 }
 
 .checkbox-label{
-    background-color:#111;
-    width:50px;
+    background-color:#1111113b;
+    
+    
+    width:55px;
     height: 17px;
     border-radius:50px;
     position: relative;
@@ -96,21 +104,28 @@ p{
     justify-content:space-between;
     align-items:center;
     top:-190px;
-    right:-190px;
+    right:-160px;
+
 }
 .moon{
-    width:0.8rem;
-    height:0.8rem;
-    color: #f1c40f;
+    position:relative;
+    top:-5px;
+    left:-3px;
+    width:1rem;
+    height:1rem;
+
 }
 .sun{
-    width:0.8rem;
-    height:0.8rem;
-    color:#f39c12;
+    position:relative;
+    top:-5px;
+    left:-3px;
+    width:1rem;
+    height:1rem;
 }
 
 .checkbox-label .ball{
         background-color: #fff;
+
         width:22px;
         height:22px;
         position:absolute;
@@ -118,9 +133,11 @@ p{
         left:2px;
         top:2px;
         border-radius:50%;
-        transition: transform 0.2s linear;
+        transition: all 0.2s linear;
 }
 .checkbox:checked + .checkbox-label .ball{
-    transform: translatex(2rem);
+    transform: translatex(2.3rem);
+    background-color: #f1c40f;
+    
 }
 
