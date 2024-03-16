@@ -17,20 +17,18 @@
     </div>
     <div id="weather-container">
         
-        <input type="text"id="city" placeholder="enter city">
-        <button onclick="getWeather()">Search</button>
-        <div class="weatherEmoji">
-        <img class="weather-icon"           >
+        <input type="text" id="locationInput" placeholder="enter a city">
+        <button id="searchButton">Search</button>
+        <div class="weather-info">
+            <img id="weatherIcon">
+            <h2 id="location"></h2>
+            <p id="temperature"></p>
+            <p id="description"></p>
+            <div id="humidity-wind">
+                <span id="humid"></span>
+                <span id="wind"></span>
         </div>
-        <div class="temp-div"></div>
-        <div class="city-div"></div>
-        <div class="weather-info"></div>
-        <div class="humid-div"></div>
-        
-
     </div>
-    
     <script src="app.js"></script>
-    
 </body>
 </html>
